@@ -1,0 +1,15 @@
+{
+    "name": "mint/wordpress-model",
+    "authors": [
+        {
+            "name": "Niko1316",
+            "email": "nicolas.vw@hotmail.fr"
+        }
+    ],
+    "require": {
+        "johnpbloch/wordpress": "^4.9"
+    },
+    "extra":{
+      "wordpress-install-dir": "wp"
+    }
+}
