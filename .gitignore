@@ -1,3 +1,7 @@
 /vendor/
 wp/
 wp-config.php
+content/themes/bento/
+content/themes/twentyseventeen/
+content/plugins/akismet/
+content/plugins/contact-form-7/

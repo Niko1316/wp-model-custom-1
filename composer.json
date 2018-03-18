@@ -6,10 +6,24 @@
             "email": "nicolas.vw@hotmail.fr"
         }
     ],
+       "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
     "require": {
-        "johnpbloch/wordpress": "^4.9"
+        "johnpbloch/wordpress": "^4.9",
+         "wpackagist-theme/bento":"*",
+         "wpackagist-theme/twentyseventeen":"*",
+         "wpackagist-plugin/contact-form-7":"*",
+         "wpackagist-plugin/akismet":"*"
     },
     "extra":{
-      "wordpress-install-dir": "wp"
+      "wordpress-install-dir": "wp",
+      "installer-paths": {
+        "content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "content/themes/{$name}/": ["type:wordpress-theme"]
+      }
     }
 }
