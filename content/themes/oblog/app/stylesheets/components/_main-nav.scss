@@ -1,0 +1,11 @@
+.main-nav {
+  padding: 1.5em;
+
+  a {
+    margin: 0 1em;
+
+    &:hover {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
