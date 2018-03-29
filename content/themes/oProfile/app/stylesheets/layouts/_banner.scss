@@ -1,0 +1,29 @@
+.banner {
+  min-height: 80vh;
+  padding: 8em 0 2em 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: $breakpoint-medium) {
+    padding-right: 20%;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    padding-right: 50%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-image: linear-gradient(
+      90deg,
+      transparentize(#000, 0),
+      transparentize(#000, 1)
+    );
+    z-index: -1;
+  }
+}

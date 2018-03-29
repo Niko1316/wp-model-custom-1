@@ -1,0 +1,52 @@
+.field {
+
+  width: 100%;
+  padding: 1em;
+
+  label {
+    color: $color-text;
+    font-weight: bold;
+    display: block;
+    padding: 0.1em 0;
+  }
+
+  input[type=text],textarea {
+    padding: .7em;
+    font-size: 1em;
+    color: $color-text;
+    resize:vertical;
+    width: 100%;
+    border: none;
+    outline: 0;
+    background: lighten($color-contrast, 20);
+  }
+
+  textarea {
+    height: 10em;
+  }
+
+  input[type=submit] {
+    background:$color-text;
+    color: $color-contrast;
+    font-size: .8em;
+    padding: .8em;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+    border:none;
+
+    &:hover{
+
+      background: lighten($color-contrast, 20);
+      color:$color-text;
+    }
+  }
+
+  &.is-half {
+
+    width: 100%;
+    @media (min-width: $breakpoint-medium) {
+      flex-basis: calc(50% - 0.5em);
+    }
+  }
+}

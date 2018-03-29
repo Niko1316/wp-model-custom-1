@@ -1,5 +1,21 @@
 <?php
 
+if (!function_exists('oblog_setup')):
+
+  function oblog_setup()
+  {
+    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+
+    register_nav_menus([
+      'main' => 'Menu du haut'
+    ]);
+  }
+
+endif;
+
+add_action('after_setup_theme', 'oblog_setup');
+
 if (!function_exists('oblog_scripts')):
   // Fonction qui ajoute les styles & scripts pour le fonctionnement de oblog
   function oblog_scripts()

@@ -1,0 +1,33 @@
+.post-home {
+  padding: 2em 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 10;
+
+  &__title {
+    border-bottom: 3px solid $color-text;
+  }
+
+  &::after {
+    content: '';
+    background-color: $color-contrast;
+    opacity: 0.85;
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    z-index: -1;
+    transition: opacity $duration-normal;
+  }
+
+  &:hover::after {
+    background-color: black !important;
+    opacity: 0.35;
+  }
+
+  @each $index, $color in $post-bg-colors {
+    &:nth-child(#{$index})::after {
+      background-color: $color;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.footer {
+  background-color: $color-contrast;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $breakpoint-medium) {
+    padding: 3em;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    padding: 6em;
+  }
+
+  .contact-form {
+    width: 100%;
+
+    @media (min-width: $breakpoint-medium) {
+      width: 65%;
+    }
+  }
+
+  .contact-info {
+    width: 100%;
+
+    @media (min-width: $breakpoint-medium) {
+      width: 35%;
+    }
+  }
+}
