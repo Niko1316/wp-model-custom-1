@@ -10,7 +10,7 @@
     padding: 0.1em 0;
   }
 
-  input[type=text],textarea {
+  input[type=text],input[type=email], textarea {
     padding: .7em;
     font-size: 1em;
     color: $color-text;

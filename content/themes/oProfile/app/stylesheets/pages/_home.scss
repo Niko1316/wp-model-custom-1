@@ -1,0 +1,12 @@
+body.menu-vivible {
+  .menu {
+    visibility:  visible;
+  }
+  .wrapper {
+    filter: blur(15px);
+  }
+}
+
+.wrapper {
+  transition: $duration-normal;
+}

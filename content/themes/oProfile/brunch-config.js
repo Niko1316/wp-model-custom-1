@@ -1,5 +1,6 @@
 // See http://brunch.io for documentation.
 exports.files = {
+
   // Je demande à Brunch de rassembler mon JS dans
   javascripts: {
     joinTo: {
@@ -9,6 +10,7 @@ exports.files = {
       'js/vendors.js': /^(?!app)/,
     }
   },
+
   // Je demande à Brunch de rassembler mon CSS dans
   stylesheets: {
     joinTo: {
@@ -17,20 +19,28 @@ exports.files = {
       // vendors.css si il ne provient pas de mon dossier app
       'css/vendors.css': /^(?!app)/,
     }
-  }
+  },
+
 };
 
 exports.plugins = {
+
   sass: {
     options: {
       includePaths: ['node_modules/font-awesome/scss']
     }
   },
+
   copycat: {
     'fonts': ['node_modules/font-awesome/fonts']
   },
+
   browserSync: {
     files: ['*']
+  },
+
+  cleancss: {
+    ignored: /app\.css/
   }
 };
 

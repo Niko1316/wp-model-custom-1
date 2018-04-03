@@ -1,12 +1,11 @@
-<?php get_header(); ?>
+<?php
 
-<article class="post">
+get_header();
 
-<?php if (have_posts()): while(have_posts()): the_post(); ?>
-  <?php get_template_part('template-parts/post/excerpt'); ?>
-<?php endwhile; endif; ?>
+if (have_posts()): while(have_posts()): the_post();
+    get_template_part('template-parts/posts/page', 'banner');
+endwhile; endif;
 
-</article>
+get_footer();
 
-
-<?php get_footer(); ?>
+?>
