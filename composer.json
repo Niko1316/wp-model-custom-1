@@ -17,7 +17,10 @@
          "wpackagist-theme/bento":"*",
          "wpackagist-theme/twentyseventeen":"*",
          "wpackagist-plugin/contact-form-7":"*",
-         "wpackagist-plugin/akismet":"*"
+         "wpackagist-plugin/akismet":"*",
+         "wpackagist-plugin/advanced-custom-fields":"*",
+         "wpackagist-plugin/advanced-custom-fields-font-awesome":"*"
+
     },
     "extra":{
       "wordpress-install-dir": "wp",

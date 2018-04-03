@@ -1,6 +1,4 @@
-<?php the_content(); ?>
-
-<!-- <form action="">
+<form action="">
   <div class="field is-half">
     <label for="name">Nom</label>
     <input type="text" name="name" id="name" />
@@ -16,4 +14,4 @@
   <div class="field">
     <input type="submit" value="Envoyer" />
   </div>
-</form> -->
+</form>
