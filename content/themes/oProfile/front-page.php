@@ -4,6 +4,11 @@
     <?php get_template_part('template-parts/posts/page', 'banner'); ?>
 <?php endwhile; endif; ?>
 
+
+<!-- Création d'un hook  -->
+<!-- <?php do_action('after_banner'); ?> -->
+
+
 <section class="posts" id="posts">
 <?php
   // Requete perso avec WP_Query et nos arguments spécifiques
@@ -34,7 +39,7 @@
 ?>
 
 </section>
- 
+
 <?php
 
   if (!empty(get_theme_mod('oprofile_page_select'))) {
