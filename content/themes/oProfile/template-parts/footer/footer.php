@@ -1,5 +1,5 @@
 
-<footer class="footer" id="contact">
+<footer class="footer" id="contact" style="background-color:<?php echo get_theme_mod('oprofile_footer_bgcolor') ?>">
   <div class="contact-form">
     <?php
 if (get_theme_mod('oprofile_footer_contactform7')):

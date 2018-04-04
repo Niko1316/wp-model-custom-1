@@ -68,5 +68,26 @@ function create_section_footer($wp_customize, $panel_id){
       'label' => 'remplir address', // Label de mon setting
     ]);
 
+    /*
+      *
+      * Je déclare mon setting qui permet de changer la couleur en mode color picker
+      *
+      */
+    $wp_customize->add_setting( 'oprofile_footer_bgcolor', ['default' => '#2C334C']);
+    // Je déclare pour mon setting ces caractèristiques (son control)
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'bgcolor',
+            [
+                'label' => 'Couleur de fond',
+                'section' => 'oprofile_footer',
+                'settings' => 'oprofile_footer_bgcolor',
+            ]
+        )
+     );
+
+
+
 
 }

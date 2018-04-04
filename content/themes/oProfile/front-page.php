@@ -18,7 +18,7 @@
     // Optionnel car par défaut déjà en fonction de la date
     'orderby' => 'date',
     // On souhaite afficher 6 résultats
-    'posts_per_page' => 6
+    'posts_per_page' => get_theme_mod('oprofile_posts_nbarticles')
   ];
 
   $query_posts = new WP_Query($args_query_posts);
@@ -32,7 +32,30 @@
   wp_reset_postdata();
 
 ?>
+
 </section>
+ 
+<?php
+
+  if (!empty(get_theme_mod('oprofile_page_select'))) {
+
+    $args_query_page_select = [
+      // Je souhaite afficher la page dont l'id est fournis par le customizer
+      'page_id' => get_theme_mod('oprofile_page_select')
+    ];
+
+    $query_posts = new WP_Query($args_query_page_select);
+
+    if ($query_posts->have_posts()): while($query_posts->have_posts()): $query_posts->the_post();
+
+      get_template_part('template-parts/posts/page', 'default');
+
+    endwhile; endif;
+
+    wp_reset_postdata();
+  }
+ ?>
+
 <section class="grid">
   <?php
     // Requete perso avec WP_Query et nos arguments spécifiques
