@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 
 <?php if (have_posts()): while(have_posts()): the_post(); ?>
@@ -67,9 +68,9 @@
     $args_query_posts = [
       // Optionel car par défaut déjà égal à post.
       // De plus comme on spécifie une catégorie, c'est forcement un post (la page n'a pas de catégorie)
-      'post_type' => 'post',
+      'post_type' => 'skills',
       // On souhaite afficher le contenu dont le slug de la catégorie est "mes-competences"
-      'category_name' => 'crossfit',
+      // 'category_name' => 'crossfit',
       // Optionnel car par défaut à 'DESC'
       'order' => 'DESC',
       // Optionnel car par défaut déjà en fonction de la date
