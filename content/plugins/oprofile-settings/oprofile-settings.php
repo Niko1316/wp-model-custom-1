@@ -13,6 +13,8 @@ if (!defined('WPINC')) {
 }
 
 
+
+require plugin_dir_path(__FILE__) . 'inc/shortcodes.php';
 // Mise en place de mon custom post type projet
 require plugin_dir_path(__FILE__) . 'inc/cpt_projet.php';
 // Mise en place de mon custom post type skills
