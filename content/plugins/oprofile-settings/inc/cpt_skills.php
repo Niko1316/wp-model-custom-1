@@ -1,61 +1,72 @@
 <?php
 
-// CPT = Custom Post type
-// CCT = Custom Content Type
-class Skills_cpt {
+// CPT => Custom Post Type
+// CCT => Custom Content Type
 
-public function __construct() {
+class Skills_cpt
+{
+  public function __construct()
+  {
+    // Méthode pour executer une fonction
+    // add_action('init', 'cpt_skills_init');
 
-    add_action ('init', [$this,'cpt_skills_init']);
-}
-
-public function cpt_skills_init() {
-
-
-	$labels = array(
-		'name'               =>  'Compétences',
-		'singular_name'      =>  'Compétence',
-		'menu_name'          =>  'Compétences',
-		'add_new'            =>  'Ajouter une compétence',
-		'add_new_item'       =>  'Ajouter une nouvelle Compétence',
-		'new_item'           =>  'Nouvelle Compétence',
-		'edit_item'          =>  'Editer une Compétence',
-		'view_item'          =>  'Voir la Compétence',
-		'all_items'          =>  'Voir toutes les Compétences',
-		'search_items'       =>  'Rechercher une Compétences',
-		'not_found'          =>  'Aucune compétence trouvée.',
-		'not_found_in_trash' =>  'Aucune compétence trouvée dans la corbeille.',
-	);
-
-	$args = array(
-		'labels'             => $labels,
-        'description'        => 'Compétence pour montrer la maitrise des 30% du web',
-		'public'             => true,
-		'publicly_queryable' => false,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => ['slug' => 'compétence'],
-		'has_archive'        => false,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => ['title', 'editor', 'custom-fields'],
-        'menu_icon'          => 'dashicons-nametag'
-	);
-
-	register_post_type( 'skills', $args );
+    // Méthode pour executer une méthode d'un objet
+    add_action('init', [$this, 'cpt_skills_init']);
   }
 
-  public function activation() {
-      // je déclare mon cpt a WP
-      $this->cpt_skills_init();
-      // puis je refresh les permaliens
-      flush_rewrite_rules();
+  public function cpt_skills_init()
+  {
+
+    $labels = array(
+      'name'               => 'Compétences',
+      'singular_name'      => 'Compétence',
+      'menu_name'          => 'Compétences',
+      'name_admin_bar'     => 'Compétence',
+      'add_new'            => 'Ajouter une compétence',
+      'add_new_item'       => 'Ajouter une nouvelle compétence',
+      'new_item'           => 'Nouvelle compétence',
+      'edit_item'          => 'Editer une compétence',
+      'view_item'          => 'Voir la compétence',
+      'all_items'          => 'Voir toutes les compétences',
+      'search_items'       => 'Rechercher une compétence',
+      'not_found'          => 'Aucune compétence trouvée',
+      'not_found_in_trash' => 'AUcune compétence trouvée dans la corbeille',
+    );
+
+    $args = array(
+      'labels'             => $labels,
+      'description'        => 'Compétences pour montrer qu\'on maitrise entre autre les 30% du WEB !',
+      'public'             => true,
+      'publicly_queryable' => false,
+      'show_ui'            => true,
+      'show_in_menu'       => true,
+      'query_var'          => true,
+      'has_archive'        => false,
+      'hierarchical'       => false,
+      'menu_position'      => null,
+      'supports'           => [
+        'title',
+        'editor',
+        'custom-fields',
+      ],
+      'menu_icon'           => 'dashicons-nametag'
+    );
+
+    register_post_type( 'skills', $args );
+  }
+
+  public function activation()
+  {
+    // Je déclare mon CTP à WordPress
+    $this->cpt_skills_init();
+
+    // Puis je refresh mes permaliens
+    flush_rewrite_rules();
   }
 
   public function deactivation()
   {
-     flush_rewrite_rules();
+    // Je refresh mes permaliens
+    flush_rewrite_rules();
   }
-
 }

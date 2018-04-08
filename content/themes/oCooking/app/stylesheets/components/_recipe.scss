@@ -1,0 +1,17 @@
+.recipe {
+  background-color: $white;
+  padding: 2em;
+
+  &__meta {
+    border-left: 1px dashed darken($light, 20);
+  }
+
+  &__image {
+    margin: 1.5em 0;
+  }
+
+  &__footer {
+    border-top: 1px dashed darken($light, 20);
+    padding-top: 1.5em;
+  }
+}
