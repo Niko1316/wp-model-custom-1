@@ -14,6 +14,14 @@ if (!defined('WPINC')) {
 
 // Récuperation de la class Recipe_cpt
 require plugin_dir_path(__FILE__) . 'inc/Recipe_cpt.php';
+// Récuperation des roles & capacités
+require plugin_dir_path(__FILE__) . 'inc/roles.php';
+// Mise en place de notre Custom BO
+require plugin_dir_path(__FILE__) . 'inc/settings_page.php';
+// Chargement des utils
+require plugin_dir_path(__FILE__) . 'inc/utils.php';
+require plugin_dir_path(__FILE__) . 'inc/settings_rest_api.php';
+
 
 $recipe_cpt = new Recipe_cpt();
 

@@ -8,10 +8,11 @@ class Recipe_cpt
     add_action('init', [$this, 'create_taxonomies']);
   }
 
+
   public function create_cpt()
   {
     $labels = [
-      'name'                  => 'Recettes',
+      'name'                  => __('recipe', 'ocooking'),
       'singular_name'         => 'Recette',
       'menu_name'             => 'Recettes',
       'name_admin_bar'        => 'Recettes',
@@ -62,6 +63,7 @@ class Recipe_cpt
       'has_archive'           => true,
       'exclude_from_search'   => false,
       'publicly_queryable'    => true,
+      'show_in_rest'          =>true,
       'menu_icon'             => 'dashicons-carrot'
     ];
     register_post_type( 'recipe', $args );

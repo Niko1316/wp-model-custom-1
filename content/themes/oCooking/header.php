@@ -13,7 +13,7 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar-brand">
-          <a href="#" class="navbar-item">
+          <a href="<?php echo home_url(); ?>" class="navbar-item">
             <span class="icon">
               <i class="fa fa-cutlery"></i>
             </span>
@@ -22,21 +22,13 @@
         </div>
         <div class="navbar-menu">
           <div class="navbar-start">
-            <a href="#" class="navbar-item">Au hasard</a>
-            <a href="#" class="navbar-item">Recettes</a>
+            <?php get_template_part('template-parts/nav/nav', 'header'); ?>
           </div>
           <div class="navbar-end">
-            <a href="#" class="navbar-item">
-              <span class="icon">
-                <i class="fa fa-facebook"></i>
-              </span>
-            </a>
-            <a href="#" class="navbar-item">
-              <span class="icon">
-                <i class="fa fa-twitter"></i>
-              </span>
-            </a>
-            <a href="#" class="navbar-item">
+            <?php show_ocooking_facebook(); ?>
+            <?php show_ocooking_twitter(); ?>
+            <?php show_ocooking_instagram(); ?>
+            <a href="#" class="navbar-item toggle-menu">
               <span class="icon">
                 <i class="fa fa-bars"></i>
               </span>
